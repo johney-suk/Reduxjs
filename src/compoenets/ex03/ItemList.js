@@ -10,7 +10,6 @@ const ItemList = ({addItemToCart}) => {
                 <h2>{item.price}</h2>
                 <div>
                     <button onClick={() => { addCart(item) } }>CLICK</button>
-                    <button onClick={() => { addCart(item) } }>ClICK(PRICE)</button>
                 </div>
             </div>
         )

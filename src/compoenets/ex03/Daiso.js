@@ -10,13 +10,18 @@ const style = {
 
 const Daiso = () => {
 
-
     const [userItems, setUserItems] = useState([])
 
     const addItemToCart = (item) => {
-        // 새로운 참조
-        setUserItems([...userItems, item])
 
+            const value = userItems.indexOf(item);
+            if (value === -1) {
+                setUserItems([...userItems, item])
+            }else {
+                userItems[value].count++;
+                setUserItems([...userItems])
+        setUserItems([...userItems, item])
+            }
     }
 
 

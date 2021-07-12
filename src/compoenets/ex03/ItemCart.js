@@ -16,7 +16,7 @@ const ItemCart = ({userItems}) => {
             <h2>ItemCart</h2>
             <ul>
                 {userItems.map((item,idx) =>
-                    <li key = {idx}>{item.name}{item.price + idx}</li>)}
+                    <li key = {idx}>{item.name},{item.price},{item.count}</li>)}
             </ul>
         </div>
     );
