@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'; //node_modules
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'; // 현재 폴더 (./)
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
