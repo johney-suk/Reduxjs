@@ -17,6 +17,9 @@ const Counter1 = () => {
                 <button onClick={()=>{setNum(num+1)}}>+</button>
                 <button onClick={()=>{setNum(num-1)}}>-</button>
             </div>
+            <div>
+                <CountButtons></CountButtons>
+            </div>
         </div>
 
     );
