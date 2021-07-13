@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import numService from "./numService";
 
 
 
 const Counter2 = () => {
+
     //상태
+    const [changed, setChanged] = useState(false)
+
     //함수
+    const callChanged = () => {
+
+        setChanged(!changed)
+        console.log("visited callChanged")
+    }
+
+    numService.setFn(callChanged)
 
     return (
         <div>
@@ -17,7 +27,8 @@ const Counter2 = () => {
 };
 
 const Count2Display = () => {
-    console.log(12312321,numService)
+
+    console.log("visited Count2Display",numService)
 
     return(
         <div>
