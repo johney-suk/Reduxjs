@@ -3,11 +3,12 @@ import './App.css';
 import HelloWorld from "./compoenets/HelloWorld";
 import NumberPanel from "./compoenets/ex02/NumberPanel";
 import Daiso from "./compoenets/ex03/Daiso";
+import Counter1 from "./compoenets/counter01/Counter1";
 
 function App() {
     return (
         <div className="App">
-            <Daiso></Daiso>
+            <Counter1></Counter1>
         </div>
     );
 }
