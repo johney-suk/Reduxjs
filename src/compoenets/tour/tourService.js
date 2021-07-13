@@ -14,7 +14,7 @@ const tourService = () => {
 
     const getByCat = (str) => {
 
-        if (!str){
+        if (!str) {
             return spots
         }
 

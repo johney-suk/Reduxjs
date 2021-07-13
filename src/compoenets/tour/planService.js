@@ -11,6 +11,7 @@ const planService = () =>{
     }
 
     const append = (spot)=>{
+        // if (spot)
         console.log("visited append.........",spot)
         arr.push(spot)
         fn()
@@ -18,7 +19,9 @@ const planService = () =>{
     }
     const remove = (spot) =>{
         console.log("visited remove.........",spot)
-        arr.filter(s=>s.name !== spot.name)
+
+        // 초기화 해야댐
+        arr = arr.filter(s=>s.name !== spot.name)
         fn()
     }
 

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import storeService from "./storeService";
+import tourService from "./tourService";
 
 const style = {
     width: '100%',
@@ -24,30 +24,26 @@ const TourMap = () => {
         showMarkers(map)
     }, [])
 
-    // const showMarkers = (map) => {
-    //     const stores = storeService.getStores()
-    //     const positions = stores.map( store => ({title:store.name, latlng:new kakao.maps.LatLng(store.lat,store.lng) }) )
-    //
-    //     // 마커 이미지의 이미지 주소입니다
-    //     var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-    //
-    //     for (var i = 0; i < positions.length; i ++) {
-    //
-    //         // 마커를 생성합니다
-    //         const marker = new kakao.maps.Marker({
-    //             map: map, // 마커를 표시할 지도
-    //             position: positions[i].latlng, // 마커를 표시할 위치
-    //             title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-    //         });
-    //         marker.orgin = stores[i]
-    //
-    //         // 마커에 click 이벤트를 등록합니다
-    //         kakao.maps.event.addListener(marker, 'click', function() {
-    //             console.log(marker)
-    //             console.log(marker.orgin)
-    //         });
-    //     }
-    // }
+    const showMarkers = (map) => {
+        const spots = tourService.getSpots()
+        const positions = spots.map( spot => ({title:spot.name, latlng:new kakao.maps.LatLng(spot.lat,spot.lng) }) )
+
+        // 마커 이미지의 이미지 주소입니다
+        for (var i = 0; i < positions.length; i ++) {
+
+            // 마커를 생성합니다
+            const marker = new kakao.maps.Marker({
+                map: map, // 마커를 표시할 지도
+                position: positions[i].latlng, // 마커를 표시할 위치
+                title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+            });
+
+            marker.orgin = spots[i]
+            // 마커에 click 이벤트를 등록합니다
+            kakao.maps.event.addListener(marker, 'click', function() {
+            });
+        }
+    }
 
     return (
         <div>
