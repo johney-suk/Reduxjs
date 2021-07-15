@@ -1,8 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import todoService from "./todoService";
 import TodoList from "./TodoList";
+import {useSelector} from "react-redux";
+import SiginButton from "../siginin/SiginButton";
 
 const TodoBoard = () => {
+
+    const countObj = useSelector(state => state.count)
 
     const [now, setNow] = useState('')
     const [flag, setFlag] = useState(false)
@@ -22,7 +26,11 @@ const TodoBoard = () => {
 
     return (
         <div>
-            <h1>Simple Todo {now} </h1>
+            {/*<h1>현재 시간은  {now} </h1>*/}
+
+            <h1>Count : {countObj.count} </h1>
+            <SiginButton></SiginButton>
+
             <button onClick={getTime}>current Time</button>
             <TodoList></TodoList>
         </div>
