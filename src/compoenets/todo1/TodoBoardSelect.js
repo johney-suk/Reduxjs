@@ -3,6 +3,7 @@ import todoService from "./todoService";
 import TodoList from "./TodoList";
 import {useSelector} from "react-redux";
 import SiginButton from "../siginin/SiginButton";
+import AsyncTime from "../async/AsyncTime";
 
 const TodoBoard = () => {
 
@@ -29,6 +30,7 @@ const TodoBoard = () => {
             {/*<h1>현재 시간은  {now} </h1>*/}
 
             <h1>Count : {countObj.count} </h1>
+            <AsyncTime></AsyncTime>
             <SiginButton></SiginButton>
 
             <button onClick={getTime}>current Time</button>
